@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Mark Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Mark Calculator</h2>
+
+    <input type="number" id="mark1" placeholder="Enter Subject 1 marks"><br>
+    <input type="number" id="mark2" placeholder="Enter Subject 2 marks"><br>
+    <input type="number" id="mark3" placeholder="Enter Subject 3 marks"><br>
+
+    <button onclick="calculateMarks()">Calculate</button>
+
+    <div class="result" id="output"></div>
+</div>
+
+<script>
+    function calculateMarks() {
+        let m1 = parseFloat(document.getElementById("mark1").value) || 0;
+        let m2 = parseFloat(document.getElementById("mark2").value) || 0;
+        let m3 = parseFloat(document.getElementById("mark3").value) || 0;
+
+        let total = m1 + m2 + m3;
+        let average = total / 3;
+
+        document.getElementById("output").innerHTML =
+            "Total = " + total + "<br>Average = " + average.toFixed(1);
+    }
+</script>
+
+</body>
+</html>
